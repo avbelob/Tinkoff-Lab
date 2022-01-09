@@ -118,8 +118,8 @@ def smoothing(all_landmarks):
             right_neighbors = [j for j in range(i + 1, len(all_landmarks)) if len(all_landmarks[j]) == 33]
             right_neighbor = min(right_neighbors) if len(right_neighbors) > 0 else None
 
-            left_neighbors = [j for j in range(i + 1, len(all_landmarks)) if len(all_landmarks[j]) == 33]
-            left_neighbor = min(left_neighbors) if len(left_neighbors) > 0 else None
+            left_neighbors = [j for j in range(0, i) if len(all_landmarks[j]) == 33]
+            left_neighbor = max(left_neighbors) if len(left_neighbors) > 0 else None
 
             if right_neighbor is None:
                 all_landmarks[i] = all_landmarks[left_neighbor]
